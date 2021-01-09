@@ -6,7 +6,8 @@ const CenteredWrapper = styled.div`
   ${(props) => {
     return css`
       svg {
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
       }
     `;
   }};
