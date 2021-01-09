@@ -5,7 +5,7 @@ export const DEFAULT_SCRIPT =
 
 const DEFAULT_OPTIONS = {
   startOnLoad: true,
-  theme: 'forest',
+  theme: 'neutral',
   logLevel: 'fatal',
   securityLevel: 'strict',
   arrowMarkerAbsolute: false,

@@ -22,7 +22,6 @@ export class Mermaid extends Component {
   }
 
   render() {
-    if (!getMermaid()) return <div className="mermaid">loading...</div>;
     return <div className="mermaid">{this.props.chart}</div>;
   }
 }
