@@ -1,0 +1,84 @@
+{
+  "name": "mermaid2react",
+  "version": "0.0.1",
+  "description": "mermaid2react",
+  "author": "Dan Lynch <pyramation@gmail.com>",
+  "homepage": "https://github.com/pyramation/mermaid2react#readme",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "main/index.js",
+  "module": "module/index.js",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "main",
+    "module"
+  ],
+  "scripts": {
+    "build:main": "cross-env BABEL_ENV=production babel src --out-dir main --delete-dir-on-start",
+    "build:module": "cross-env MODULE=true babel src --out-dir module --delete-dir-on-start",
+    "build": "npm run build:module && npm run build:main",
+    "prepublish": "npm run build",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:js": "eslint src --ext .js",
+    "lint:fix": "eslint src --fix",
+    "lint:style": "stylelint 'src/**/*.js'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pyramation/mermaid2react"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/pyramation/mermaid2react/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.11.6",
+    "@babel/core": "7.11.6",
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/plugin-proposal-export-default-from": "7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "7.11.0",
+    "@babel/plugin-transform-runtime": "7.11.5",
+    "@babel/preset-env": "7.11.5",
+    "@babel/preset-react": "7.10.4",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "25.1.0",
+    "babel-plugin-macros": "2.8.0",
+    "babel-plugin-styled-components": "1.11.1",
+    "cross-env": "^7.0.2",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-react-app": "5.2.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "jest": "^24.5.0",
+    "jest-in-case": "^1.0.2",
+    "prettier": "^2.1.2",
+    "regenerator-runtime": "^0.13.7",
+    "stylelint": "13.7.2",
+    "stylelint-config-recommended": "3.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.10.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "mermaid": "^8.8.4",
+    "react": "^17.0.1",
+    "react-dom": "^16.13.0",
+    "styled-components": "^5.0.1",
+    "styled-system": "^5.1.5"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  }
+}
