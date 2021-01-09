@@ -1,32 +1,18 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import styled, { css } from 'styled-components';
 import { getMermaid, loadMermaid } from './utils';
 
-// export class Mermaid extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.onLoad = this.onLoad.bind(this);
-//   }
+const CenteredWrapper = styled.div`
+  ${(props) => {
+    return css`
+      svg {
+        width: 100%;
+      }
+    `;
+  }};
+`;
 
-//   componentDidMount() {
-//     if (getMermaid()) {
-//       this.onLoad();
-//     }
-//     loadMermaid(this.onLoad);
-//   }
-
-//   onLoad() {
-//     window.mermaid.contentLoaded();
-//     this.setState({
-//       loaded: true
-//     });
-//   }
-
-//   render() {
-//     return <div className="mermaid">{this.props.chart}</div>;
-//   }
-// }
-
-export const Mermaid = ({ chart, options }) => {
+export const Mermaid = ({ chart, options, wrap = false }) => {
   const [loaded, setLoaded] = useState(false);
 
   const onLoad = () => {
@@ -38,9 +24,13 @@ export const Mermaid = ({ chart, options }) => {
     if (getMermaid()) {
       onLoad();
     }
-    loadMermaid(onLoad);
-  }, [chart]);
+    loadMermaid(onLoad, options);
+  }, [chart, options]);
 
   if (!loaded || !chart) return null;
-  return <div className="mermaid">{chart}</div>;
+  if (wrap) {
+    return <CenteredWrapper className="mermaid">{chart}</CenteredWrapper>;
+  } else {
+    return <div className="mermaid">{chart}</div>;
+  }
 };

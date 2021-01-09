@@ -52,8 +52,8 @@ export const getMermaid = () =>
 
 export const loadMermaid = (
   callback = () => {},
-  script = DEFAULT_SCRIPT,
-  options = DEFAULT_OPTIONS
+  options = DEFAULT_OPTIONS,
+  script = DEFAULT_SCRIPT
 ) => {
   const onLoad = () => {
     window.mermaid.initialize({ ...options });
