@@ -3,7 +3,7 @@ export const DEFAULT_SCRIPT =
   process.env.MERMAID_CDN ||
   'https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js';
 
-const DEFAULT_OPTIONS = {
+export const DEFAULT_OPTIONS = {
   startOnLoad: true,
   theme: 'neutral',
   logLevel: 'fatal',
