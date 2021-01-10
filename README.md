@@ -11,6 +11,8 @@ Hence, this repo was born, which uses `load-script` to dynamically load mermaid 
 ## Usage 
 
 ```js
+import { Mermaid } from 'mermaid2react';
+
 export const YourComponent = () => {
     return (
         <Mermaid chart={`
