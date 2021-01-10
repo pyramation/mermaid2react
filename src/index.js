@@ -18,6 +18,10 @@ export const Mermaid = ({ chart, options, wrap = true }) => {
   const [loaded, setLoaded] = useState(false);
 
   const onLoad = () => {
+    setTimeout(() => {
+      // hack for content not loaded for some reason...
+      window.mermaid.contentLoaded();
+    }, 250);
     window.mermaid.contentLoaded();
     setLoaded(true);
   };

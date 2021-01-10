@@ -1,6 +1,10 @@
 # mermaid2react
 
-Uses `load-script` to dynamically load mermaid from a CDN
+For SSR and backend rendering, it's not necessary to load mermaid js. Additionally, webpack and friends can create issues when importing the library into your package.
+
+Hence, this repo was born, which uses `load-script` to dynamically load mermaid from a CDN.
+
+## Usage 
 
 ```js
 export const YourComponent = () => {
