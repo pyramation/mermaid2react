@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { getMermaid, loadMermaid } from './utils';
+export { DEFAULT_OPTIONS as defaultOptions } from './utils';
 
 const CenteredWrapper = styled.div`
   ${(props) => {
@@ -13,7 +14,7 @@ const CenteredWrapper = styled.div`
   }};
 `;
 
-export const Mermaid = ({ chart, options, wrap = false }) => {
+export const Mermaid = ({ chart, options, wrap = true }) => {
   const [loaded, setLoaded] = useState(false);
 
   const onLoad = () => {
